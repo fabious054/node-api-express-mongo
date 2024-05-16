@@ -1,13 +1,16 @@
-import http from 'http';
-import express from 'express';
+import http from "http";
 
 const PORT = 3000;
-const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World\n');
+const rotas = {
+    "/" : "curso de express api",
+}
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end(rotas[req.url] || "rota não encontrada");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log("servidor escutando!");
 });
