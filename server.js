@@ -1,13 +1,12 @@
-import { log } from 'console';
-import http from 'http';
+const express = require('express');
 
 const PORT = 3000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
+app.get('/', (req, res) => {
+  res.send('Hello World\n');
 });
 
-server.listen(PORT, () => {
-    console.log('Server is running on port 3000');
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
