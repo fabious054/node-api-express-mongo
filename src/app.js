@@ -1,39 +1,26 @@
 import express from 'express';
 import connectDb from "./config/dbconnect.js";
+import Book from './models/Book.js';
 
-// const db = await connectDb();
+const db = await connectDb();
+db.on("error", (error) => {console.log(error)});
 
-// db.on('error', (error) => {console.log(error)});
-// // db.on('open', () => {console.log('Connected to MongoDB')});
-
-// db.once('open', () => {
-//     console.log('Connected to MongoDB');
-// });
+db.once("open", () => {
+    console.log('Connected to MongoDB');
+});
 
 const app = express();
 app.use(express.json());
 
-const books = [
-    {
-        id: 1,
-        title: "livro 1",
-    },
-    {
-        id: 2,
-        title: "livro 2",
-    },
-];
 
-function findBookById(id) {
-    return books.findIndex(livro => livro.id == Number(id));
-}
 
 app.get('/', (req, res) => {
     res.status(200).send('Course express api');
 });
 
-app.get('/books/', (req, res) => {
-    res.status(200).json(books);
+app.get('/books/', async (req, res) => {
+    const booksList = await Book.find({});
+    res.status(200).json(booksList);
 });
 
 app.get('/books/:id', (req, res) => {
