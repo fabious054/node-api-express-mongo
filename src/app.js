@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     res.status(200).send('Course express api');
 });
 
+app.get('/test/', async (req, res) => {
+    res.status(200).json({message: 'Test route', status: 200,env: process.env.DB_CONNECTION_STRING});
+});
+
 app.get('/books/', async (req, res) => {
     const booksList = await Book.find({});
     res.status(200).json(booksList);
