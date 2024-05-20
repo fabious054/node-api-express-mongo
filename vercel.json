@@ -15,7 +15,7 @@
     "functions": {
         "*": {
             "memory": 128,
-            "maxDuration": 100
+            "maxDuration": 10
         }
     }
 }
