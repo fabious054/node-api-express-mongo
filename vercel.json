@@ -12,11 +12,8 @@
         }
     ],
     "functions": {
-        "api/**/*.js": {
-            "runtime": "@vercel/node",
-            "includeFiles": "api/**/*.js",
-            "maxDuration": 300,
-            "memory": 1024
+        "api/*": {
+            "runtime": "@vercel/node"
         }
     }
 }
