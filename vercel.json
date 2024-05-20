@@ -13,9 +13,6 @@
     ],
     "functions": {
         "./server.js": {
-            "runtime": "@vercel/node",
-            "includeFiles": "src/**",
-            "excludeFiles": "node_modules/**",
             "maxDuration": 300,
             "memory": 1024
         }
