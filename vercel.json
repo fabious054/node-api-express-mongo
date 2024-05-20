@@ -14,8 +14,7 @@
     ],
     "functions": {
         "*": {
-            "memory": 1,
-            "maxDuration": 1
+            "maxDuration": 100
         }
     }
 }
