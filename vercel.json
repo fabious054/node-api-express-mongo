@@ -12,10 +12,8 @@
         }
     ],
     "functions": {
-        "./server.js": {
-          "runtime": "@vercel/node",
-          "maxDuration": 100,
-          "memory": 1024
+        "src/*": {
+            "runtime": "@vercel/node"
         }
     }
 }
