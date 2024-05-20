@@ -15,7 +15,7 @@
         "./server.js": {
             "runtime": "@vercel/node",
             "includeFiles": "src/**",
-            "excludeFiles": "node_modules/**",
+            "excludeFiles": "src/**/*.test.js",
             "maxDuration": 300,
             "memory": 1024
         }
