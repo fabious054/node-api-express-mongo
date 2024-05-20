@@ -10,10 +10,5 @@
             "src": "(.*)",
             "dest": "server.js"
         }
-    ],
-    "functions": {
-        "api/*": {
-            "runtime": "@vercel/node"
-        }
-    }
+    ]
 }
